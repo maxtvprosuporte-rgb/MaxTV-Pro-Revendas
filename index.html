@@ -6,17 +6,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== RESET / BASE ===== */
+
+/* =========================
+   RESET / BASE
+========================= */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #000;
+    background-color: #000;
     color: #fff;
 }
 
-a { text-decoration: none; }
+a {
+    text-decoration: none;
+}
 
-/* ===== CONTAINER ===== */
+/* =========================
+   CONTAINER
+========================= */
 .container {
     max-width: 1300px;
     margin: auto;
@@ -24,70 +35,104 @@ a { text-decoration: none; }
     text-align: center;
 }
 
-/* ===== LOGO ===== */
+/* =========================
+   LOGO
+========================= */
 .logo-area {
-    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .logo-area img {
     max-width: 280px;
+    width: 100%;
+    height: auto;
 }
 
-/* ===== HERO (TOPO COM IMAGEM) ===== */
+/* =========================
+   HERO / TOPO
+========================= */
 .hero {
     display: flex;
-    align-items: center;
-    min-height: 520px;
+    width: 100%;
+    min-height: 540px;
+    background-color: #000;
+    overflow: hidden;
     margin-bottom: 60px;
 }
 
+/* TEXTO */
 .hero-text {
     flex: 1;
-    padding: 40px;
+    padding: 40px 40px 40px 20px;
     text-align: left;
+    z-index: 2;
 }
 
 .hero-text h1 {
     color: #d4af37;
-    font-size: 36px;
-    margin-bottom: 15px;
+    font-size: 38px;
+    margin-bottom: 18px;
     text-transform: uppercase;
 }
 
 .hero-text p {
     font-size: 18px;
     line-height: 1.6;
+    margin-bottom: 12px;
 }
 
+/* IMAGEM COM FUNDO PRETO ABSOLUTO */
 .hero-image {
     flex: 1;
-    min-height: 520px;
-    background:
-        linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.15)),
-        url("topo-maxtvpro.png"); /* IMAGEM DE TOPO */
+    min-height: 540px;
+    background-color: #000;
+    background-image:
+        /* PRETO TOTAL NAS LATERAIS */
+        linear-gradient(to right,
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0.6) 25%,
+            rgba(0,0,0,0.6) 75%,
+            rgba(0,0,0,1) 100%
+        ),
+        /* PRETO TOTAL EM CIMA E EMBAIXO */
+        linear-gradient(to bottom,
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0.6) 25%,
+            rgba(0,0,0,0.6) 75%,
+            rgba(0,0,0,1) 100%
+        ),
+        url("img/topo_maxtvpro.png");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* ===== BOTÃO ===== */
+/* =========================
+   BOTÃO
+========================= */
 .btn {
     display: inline-block;
     margin-top: 25px;
     padding: 22px 55px;
-    background: linear-gradient(90deg, #b11212, #ef4444);
+    background: linear-gradient(90deg, #8b0000, #ef4444);
     color: #facc15;
     font-size: 22px;
     font-weight: bold;
     border-radius: 14px;
 }
 
-/* ===== BOX ===== */
+/* =========================
+   BOX
+========================= */
 .box {
-    background: #000;
+    background-color: #000;
     border: 2px solid #b11212;
     border-radius: 16px;
     padding: 30px;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .box h2 {
@@ -104,7 +149,9 @@ a { text-decoration: none; }
     margin-bottom: 8px;
 }
 
-/* ===== GRID 3 COLUNAS ===== */
+/* =========================
+   GRID 3 COLUNAS
+========================= */
 .grid {
     display: flex;
     gap: 20px;
@@ -114,60 +161,61 @@ a { text-decoration: none; }
     flex: 1;
 }
 
-/* ===== DESTAQUE ===== */
+/* =========================
+   DESTAQUE
+========================= */
 .highlight {
     color: #facc15;
     font-weight: bold;
 }
 
-/* ===== FOOTER ===== */
+/* =========================
+   FOOTER
+========================= */
 footer {
     margin-top: 60px;
     font-size: 14px;
     color: #aaa;
 }
 
-/* ===== RESPONSIVO ===== */
+/* =========================
+   RESPONSIVO
+========================= */
 @media (max-width: 900px) {
+
     .hero {
         flex-direction: column;
-        text-align: center;
+        min-height: auto;
     }
 
     .hero-text {
         text-align: center;
+        padding: 30px 20px;
     }
 
     .hero-image {
         width: 100%;
-        min-height: 260px;
-        background:
-            linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.25)),
-            url("topo-maxtvpro.png");
+        min-height: 280px;
+        background-image:
+            linear-gradient(to right,
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0.6) 25%,
+                rgba(0,0,0,0.6) 75%,
+                rgba(0,0,0,1) 100%
+            ),
+            linear-gradient(to bottom,
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0.6) 25%,
+                rgba(0,0,0,0.6) 75%,
+                rgba(0,0,0,1) 100%
+            ),
+            url("img/topo_maxtvpro.png");
+        background-size: cover;
+        background-position: center;
     }
 
     .grid {
         flex-direction: column;
-    }
-}
-
-.hero-image {
-    flex: 1;
-    min-height: 520px;
-    background:
-        linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.15)),
-        url("img/topo_maxtvpro.png");
-    background-size: cover;
-    background-position: center;
-}
-
-@media (max-width: 900px) {
-    .hero-image {
-        width: 100%;
-        min-height: 260px;
-        background:
-            linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.25)),
-            url("img/topo_maxtvpro.png");
     }
 }
 
@@ -184,27 +232,29 @@ footer {
 </div>
 
 <!-- ===== HERO ===== -->
-<div class="hero">
-    <div class="hero-text">
-        <h1>Programa Afiliados MaxTV Pro</h1>
-        <p>
-            Transforme o entretenimento em uma verdadeira fonte de renda.<br>
-            Venda planos a <span class="highlight">R$ 30,00</span> e tenha
-            <span class="highlight">lucro recorrente acima de 100%</span>.
-        </p>
 
-        <p>
-            Painel completo • Automação • Suporte 24h •
-            Créditos sem expiração
-        </p>
+<div class="hero-text">
+    <h1>Revenda MaxTV Pro</h1>
 
-        <a href="https://atmos.panelbr.site/#/rs/ywDmBebWpR/241KrdoWmx"
-           class="btn" target="_blank">
-            FAÇA AGORA SEU CADASTRO GRÁTIS!
-        </a>
-    </div>
+    <p>
+        Transforme o entretenimento em uma verdadeira fonte de renda.<br>
+        Venda planos a partir de <span class="highlight">R$ 30,00</span> e tenha
+        <span class="highlight">lucro recorrente acima de 100%</span>.
+    </p>
 
-    <div class="hero-image"></div>
+    <p>
+        Muitos já conquistaram sua liberdade financeira,
+        <span class="highlight">conquiste a sua hoje!</span>
+    </p>
+
+    <p>
+        Painel completo • Automação • Suporte 24h • Créditos sem expiração
+    </p>
+
+    <a href="https://atmos.panelbr.site/#/rs/ywDmBebWpR/241KrdoWmx"
+       class="btn" target="_blank">
+        FAÇA AGORA SEU CADASTRO GRÁTIS!
+    </a>
 </div>
 
 <!-- ===== APRESENTAÇÃO ===== -->
@@ -320,4 +370,4 @@ Assista mais. Pague menos.
 
 </div>
 </body>
-</html>
+</html>	
