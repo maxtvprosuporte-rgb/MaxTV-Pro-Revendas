@@ -150,6 +150,27 @@ footer {
         flex-direction: column;
     }
 }
+
+.hero-image {
+    flex: 1;
+    min-height: 520px;
+    background:
+        linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.15)),
+        url("img/topo_maxtvpro.png");
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 900px) {
+    .hero-image {
+        width: 100%;
+        min-height: 260px;
+        background:
+            linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.25)),
+            url("img/topo_maxtvpro.png");
+    }
+}
+
 </style>
 </head>
 
@@ -159,7 +180,7 @@ footer {
 
 <!-- ===== LOGO ===== -->
 <div class="logo-area">
-    <img src="logo-maxtvpro.png" alt="MaxTV Pro">
+    <img src="icon/logo.png" alt="MaxTV Pro">
 </div>
 
 <!-- ===== HERO ===== -->
