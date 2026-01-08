@@ -220,6 +220,46 @@ a {
 }
 
 /* =========================
+   COMO FUNCIONA – PREMIUM
+========================= */
+.como-funciona .intro {
+    max-width: 900px;
+    margin: 0 auto 35px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.funciona-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.funciona-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(239,68,68,0.35);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.funciona-item h3 {
+    color: #facc15;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.funciona-item p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.funciona-item.alerta {
+    border-color: #ef4444;
+    background: rgba(239,68,68,0.08);
+}
+
+/* =========================
    GRID
 ========================= */
 .grid {
@@ -339,16 +379,83 @@ footer {
 <!-- =========================
      COMO FUNCIONA
 ========================= -->
-<div class="box">
-  <h2>🔧 Como Funciona</h2>
-  <ul>
-    <li>Painel precisa de créditos para ficar ativo</li>
-    <li>Cada crédito equivale a <span class="highlight">30 dias de acesso</span></li>
-    <li>Teste grátis de <span class="highlight">6 horas</span></li>
-    <li>Gerenciamento completo de clientes</li>
-    <li>Créditos não expiram</li>
-    <li>Suporte <span class="highlight">24h</span></li>
-  </ul>
+<div class="box como-funciona">
+  <h2>🔧 Como Funciona a Revenda MaxTV Pro</h2>
+
+  <p class="intro">
+    O sistema de revenda da <strong>MaxTV Pro</strong> foi desenvolvido para ser
+    <span class="highlight">simples, automatizado e altamente lucrativo</span>,
+    permitindo que você gerencie seus clientes com total controle e segurança.
+  </p>
+
+  <div class="funciona-grid">
+
+    <div class="funciona-item">
+      <h3>🔑 Ativação do Painel</h3>
+      <p>
+        Para manter o painel ativo, é necessário possuir créditos disponíveis.
+        A <span class="highlight">recarga mínima é de 5 créditos</span>.
+        Após a primeira recarga, o sistema libera automaticamente
+        <span class="highlight">100% das funcionalidades do painel</span>.
+      </p>
+    </div>
+
+    <div class="funciona-item">
+      <h3>⏳ Créditos e Validade</h3>
+      <p>
+        Cada crédito equivale a <span class="highlight">30 dias de acesso</span>
+        dentro do sistema. Os créditos <span class="highlight">não expiram</span>
+        e só são descontados quando um cliente é ativado.
+      </p>
+    </div>
+
+    <div class="funciona-item">
+      <h3>🎁 Teste Grátis Automatizado</h3>
+      <p>
+        O sistema libera automaticamente <span class="highlight">6 horas de teste grátis</span>
+        para o cliente. Após a ativação definitiva, o sistema ajusta o vencimento para
+        <span class="highlight">30 dias</span> e desconta <strong>1 crédito</strong> do painel.
+      </p>
+    </div>
+
+    <div class="funciona-item">
+      <h3>📊 Gestão Completa de Clientes</h3>
+      <p>
+        Gerencie facilmente <span class="highlight">testes, ativações e clientes vencidos</span>.
+        É possível alterar usuário e senha, renovar acessos e acompanhar o status
+        de cada cliente em tempo real.
+      </p>
+    </div>
+
+    <div class="funciona-item">
+      <h3>🧩 Recursos Avançados</h3>
+      <p>
+        Tenha acesso à <span class="highlight">ativação de aplicativos premium</span>,
+        migração de servidor, solicitação de novos conteúdos
+        e total liberdade para personalizar a experiência do cliente.
+      </p>
+    </div>
+
+    <div class="funciona-item">
+      <h3>🤖 Automação e Suporte</h3>
+      <p>
+        Conte com <span class="highlight">robô auxiliar</span> para instalação dos aplicativos,
+        <span class="highlight">suporte 24 horas</span>, grupo exclusivo de atualização
+        de esportes e conteúdos, além de grupo com
+        <span class="highlight">banners prontos para divulgação</span>.
+      </p>
+    </div>
+
+    <div class="funciona-item alerta">
+      <h3>⚠️ Importante</h3>
+      <p>
+        Caso o painel chegue a <span class="highlight">0 créditos</span>,
+        ele ficará temporariamente bloqueado até a realização de uma nova recarga.
+        Após a recarga, o acesso é restabelecido automaticamente.
+      </p>
+    </div>
+
+  </div>
 </div>
 
 <!-- =========================
