@@ -315,8 +315,31 @@ footer {
 <div class="box simulador">
   <h2>📈 Simulador de Ganhos</h2>
 
-  <input type="number" id="creditos" placeholder="Quantidade de créditos">
-  <input type="number" id="valorVenda" placeholder="Valor de venda (R$)">
+  <p>Selecione a quantidade de créditos e o valor de venda por cliente:</p>
+
+  <select id="pacote">
+    <option value="">Selecione a quantidade de créditos</option>
+    <option value="5" data-custo="60">5 Créditos – R$ 60,00</option>
+    <option value="10" data-custo="100">10 Créditos – R$ 100,00</option>
+    <option value="20" data-custo="200">20 Créditos – R$ 200,00</option>
+    <option value="25" data-custo="222.5">25 Créditos – R$ 222,50</option>
+    <option value="30" data-custo="255">30 Créditos – R$ 255,00</option>
+    <option value="50" data-custo="365">50 Créditos – R$ 365,00</option>
+    <option value="100" data-custo="515">100 Créditos – R$ 515,00</option>
+    <option value="250" data-custo="1145">250 Créditos – R$ 1.145,00</option>
+    <option value="500" data-custo="1770">500 Créditos – R$ 1.770,00</option>
+    <option value="1000" data-custo="2030">1000 Créditos – R$ 2.030,00</option>
+    <option value="2000" data-custo="3840">2000 Créditos – R$ 3.840,00</option>
+    <option value="5000" data-custo="9050">5000 Créditos – R$ 9.050,00</option>
+    <option value="10000" data-custo="17100">10000 Créditos – R$ 17.100,00</option>
+    <option value="20000" data-custo="32200">20000 Créditos – R$ 32.200,00</option>
+    <option value="100000" data-custo="151000">100000 Créditos – R$ 151.000,00</option>
+  </select>
+
+  <br><br>
+
+  <input type="number" id="valorVenda" value="30" min="30"
+         placeholder="Valor de venda por cliente (mín. R$ 30)">
 
   <br>
 
@@ -324,7 +347,7 @@ footer {
 
   <div id="resultado"></div>
 </div>
-
+   
 <!-- =========================
      CTA FINAL
 ========================= -->
@@ -346,24 +369,29 @@ Assista mais. Pague menos.
 ========================= -->
 <script>
 function calcularLucro() {
-  const creditos = parseInt(document.getElementById('creditos').value);
-  const valorVenda = parseFloat(document.getElementById('valorVenda').value);
+  const pacote = document.getElementById("pacote");
+  const creditos = parseInt(pacote.value);
+  const custoPacote = parseFloat(
+    pacote.options[pacote.selectedIndex]?.dataset.custo
+  );
+  const valorVenda = parseFloat(document.getElementById("valorVenda").value);
 
-  if (!creditos || !valorVenda) {
-    document.getElementById('resultado').innerHTML =
-      "<p class='highlight'>Preencha todos os campos corretamente.</p>";
+  if (!creditos || !custoPacote || !valorVenda || valorVenda < 30) {
+    document.getElementById("resultado").innerHTML =
+      "<p class='highlight'>Selecione um pacote e informe um valor mínimo de R$ 30,00.</p>";
     return;
   }
 
-  let custoUnitario = 5.15;
-  let custo = creditos * custoUnitario;
-  let receita = creditos * valorVenda;
-  let lucro = receita - custo;
-  let porcentagem = ((lucro / custo) * 100).toFixed(1);
+  const receita = creditos * valorVenda;
+  const custoUnitario = custoPacote / creditos;
+  const lucro = receita - custoPacote;
+  const porcentagem = ((lucro / custoPacote) * 100).toFixed(1);
 
-  document.getElementById('resultado').innerHTML = `
-    <p>💰 Receita: R$ ${receita.toFixed(2)}</p>
-    <p>📉 Custo: R$ ${custo.toFixed(2)}</p>
+  document.getElementById("resultado").innerHTML = `
+    <p>📦 Créditos: <strong>${creditos}</strong></p>
+    <p>💰 Receita Total: <strong>R$ ${receita.toFixed(2)}</strong></p>
+    <p>📉 Custo Total: <strong>R$ ${custoPacote.toFixed(2)}</strong></p>
+    <p>💵 Custo por Crédito: <strong>R$ ${custoUnitario.toFixed(2)}</strong></p>
     <p class="highlight">🚀 Lucro: R$ ${lucro.toFixed(2)} (${porcentagem}%)</p>
   `;
 }
