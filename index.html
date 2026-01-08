@@ -5,9 +5,8 @@
 <title>Programa Afiliados MaxTV Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-
-/* =========================
+<!-- CSS -->
+<style>/* =========================
    RESET / BASE
 ========================= */
 * {
@@ -19,6 +18,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #000;
     color: #fff;
+    text-align: center;
 }
 
 a {
@@ -26,134 +26,65 @@ a {
 }
 
 /* =========================
-   CONTAINER
+   HERO PREMIUM
 ========================= */
-.container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 30px 20px;
-    text-align: center;
-}
-
-/* =========================
-   LOGO
-========================= */
-.logo-area {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.logo-area img {
-    max-width: 280px;
-    width: 100%;
-    height: auto;
-}
-
-/* =========================
-   HERO / TOPO
-========================= */
-/* HERO COM TEXTO SOBRE A IMAGEM */
-.hero-image {
+.hero {
     position: relative;
     width: 100%;
-    min-height: 540px;
-    background-image:
-        linear-gradient(to right,
-            rgba(0,0,0,0.8) 0%,
-            rgba(0,0,0,0.4) 50%,
-            rgba(0,0,0,0.8) 100%
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* IMAGEM DE FUNDO COM DEGRADÊ */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom,
+            rgba(0,0,0,0.95) 0%,
+            rgba(0,0,0,0.85) 45%,
+            rgba(0,0,0,0.95) 100%
         ),
         url("img/topo_maxtvpro.png");
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    z-index: 1;
 }
 
-/* TEXTO SOBRE A IMAGEM */
-.hero-text {
+/* CONTEÚDO SOBRE A IMAGEM */
+.hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 40px 20px;
-    color: #fff;
+    max-width: 900px;
+    padding: 50px 35px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 22px;
+    border: 1px solid rgba(239,68,68,0.45);
+    backdrop-filter: blur(6px);
 }
 
-.hero-text h1 {
+/* LOGO */
+.hero-content img {
+    max-width: 260px;
+    margin-bottom: 25px;
+}
+
+/* TEXTO HERO */
+.hero-content h1 {
+    font-size: 44px;
     color: #d4af37;
-    font-size: 42px;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-.hero-text p {
+.hero-content p {
     font-size: 20px;
     line-height: 1.6;
     margin-bottom: 14px;
-}
-
-/* =========================
-   BOTÃO
-========================= */
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 22px 55px;
-    background: linear-gradient(90deg, #8b0000, #ef4444);
-    color: #facc15;
-    font-size: 22px;
-    font-weight: bold;
-    border-radius: 14px;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background: linear-gradient(90deg, #ef4444, #8b0000);
-    transform: scale(1.05);
-}
-
-/* =========================
-   BOX
-========================= */
-.box {
-    background-color: #000;
-    border: 2px solid #b11212;
-    border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.box h2 {
-    color: #ef4444;
-    margin-bottom: 20px;
-}
-
-.box ul {
-    list-style: none;
-    padding: 0;
-}
-
-.box ul li {
-    margin-bottom: 8px;
-}
-
-/* =========================
-   GRID 3 COLUNAS
-========================= */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    justify-content: center;
-}
-
-.grid .box {
-    max-width: 400px;
-    margin: auto;
 }
 
 /* =========================
@@ -165,10 +96,93 @@ a {
 }
 
 /* =========================
+   BOTÃO PADRÃO
+========================= */
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 22px 60px;
+    background: linear-gradient(90deg, #8b0000, #ef4444);
+    color: #facc15;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.06);
+    background: linear-gradient(90deg, #ef4444, #8b0000);
+}
+
+/* =========================
+   BOX PADRÃO
+========================= */
+.box {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 45px 30px;
+    background-color: #000;
+    border: 2px solid #b11212;
+    border-radius: 18px;
+}
+
+.box h2 {
+    color: #ef4444;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   GRID
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* =========================
+   SIMULADOR PREMIUM
+========================= */
+.simulador input {
+    width: 260px;
+    max-width: 90%;
+    padding: 14px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+.simulador button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 16px 45px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #8b0000, #ef4444);
+    color: #facc15;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.simulador button:hover {
+    transform: scale(1.05);
+}
+
+#resultado p {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+/* =========================
    FOOTER
 ========================= */
 footer {
-    margin-top: 60px;
+    margin: 60px 0 30px;
     font-size: 14px;
     color: #aaa;
 }
@@ -176,68 +190,45 @@ footer {
 /* =========================
    RESPONSIVO
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
-    .hero {
-        flex-direction: column;
-        min-height: auto;
+    .hero-content {
+        padding: 40px 20px;
     }
 
-    .hero-text {
-        text-align: center;
-        padding: 30px 20px;
+    .hero-content h1 {
+        font-size: 32px;
     }
 
-    .hero-image {
-        width: 100%;
-        min-height: 280px;
-        background-image:
-            linear-gradient(to right,
-                rgba(0,0,0,1) 0%,
-                rgba(0,0,0,0.6) 25%,
-                rgba(0,0,0,0.6) 75%,
-                rgba(0,0,0,1) 100%
-            ),
-            linear-gradient(to bottom,
-                rgba(0,0,0,1) 0%,
-                rgba(0,0,0,0.6) 25%,
-                rgba(0,0,0,0.6) 75%,
-                rgba(0,0,0,1) 100%
-            ),
-            url("img/topo_maxtvpro.png");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
+    .hero-content p {
+        font-size: 18px;
     }
 
     .btn {
-        padding: 16px 35px;
         font-size: 18px;
+        padding: 16px 40px;
     }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero-image">
-  <div class="hero-text">
+<!-- =========================
+     HERO
+========================= -->
+<section class="hero">
+  <div class="hero-content">
+
+    <!-- LOGO -->
+    <img src="img/logo_maxtvpro.png" alt="MaxTV Pro">
+
     <h1>Revenda MaxTV Pro</h1>
 
     <p>
-      Transforme o entretenimento em uma verdadeira fonte de renda.<br>
+      Transforme o entretenimento em uma <span class="highlight">fonte de renda real</span>.
       Venda planos a partir de <span class="highlight">R$ 30,00</span> e tenha
       <span class="highlight">lucro recorrente acima de 100%</span>.
-    </p>
-
-    <p>
-      Muitos já conquistaram sua liberdade financeira,
-      <span class="highlight">conquiste a sua hoje!</span>
     </p>
 
     <p>
@@ -246,178 +237,137 @@ footer {
 
     <a href="https://atmos.panelbr.site/#/rs/ywDmBebWpR/241KrdoWmx"
        class="btn" target="_blank">
-       🚀 FAÇA AGORA SEU CADASTRO GRÁTIS!
+       🚀 FAÇA AGORA SEU CADASTRO GRATUITO
     </a>
-  </div>
-</div>
 
-<!-- ===== COMO FUNCIONA ===== -->
+  </div>
+</section>
+
+<!-- =========================
+     COMO FUNCIONA
+========================= -->
 <div class="box">
   <h2>🔧 Como Funciona</h2>
-  <ul class="styled-list">
-    <li>O painel precisa de créditos para ficar ativo</li>
+  <ul>
+    <li>Painel precisa de créditos para ficar ativo</li>
     <li>Cada crédito equivale a <span class="highlight">30 dias de acesso</span></li>
-    <li>Teste grátis de <span class="highlight">6 horas</span> para clientes</li>
-    <li>Gerenciamento de testes, ativações e clientes vencidos</li>
-    <li>Alteração de usuário e senha</li>
-    <li>Ativação de aplicativos premium</li>
-    <li>Migração de servidor</li>
-    <li>Solicitação de conteúdo</li>
-    <li>Suporte <span class="highlight">24h</span></li>
-    <li>Robô auxiliar para instalação</li>
-    <li>Grupos exclusivos de esportes e banners</li>
-    <li>Recarga mínima: <span class="highlight">5 créditos</span></li>
+    <li>Teste grátis de <span class="highlight">6 horas</span></li>
+    <li>Gerenciamento completo de clientes</li>
     <li>Créditos não expiram</li>
-    <li>Painel bloqueado apenas se zerar créditos</li>
+    <li>Suporte <span class="highlight">24h</span></li>
   </ul>
 </div>
 
-<!-- ===== FUNCIONALIDADES DO PAINEL ===== -->
+<!-- =========================
+     FUNCIONALIDADES
+========================= -->
 <div class="box">
   <h2>📊 Funcionalidades do Painel</h2>
+
   <div class="grid">
     <div>
       <p class="highlight">👥 Clientes</p>
       <ul>
         <li>Estatísticas</li>
         <li>Migração</li>
-        <li>Conexões ao Vivo</li>
-        <li>Agendadas / Fila / Logs BotBot</li>
+        <li>Conexões ao vivo</li>
       </ul>
     </div>
+
     <div>
       <p class="highlight">🧩 Revendas</p>
       <ul>
-        <li>Transações de Créditos</li>
-        <li>Link de Indicação</li>
+        <li>Transações de créditos</li>
+        <li>Link de indicação</li>
       </ul>
     </div>
+
     <div>
-      <p class="highlight">🤖 BotBot</p>
+      <p class="highlight">🤖 Automação</p>
       <ul>
-        <li>Automação</li>
-        <li>Configurações</li>
-        <li>Teste Automático</li>
+        <li>Teste automático</li>
+        <li>Bot auxiliar</li>
       </ul>
     </div>
+
     <div>
       <p class="highlight">💰 Financeiro</p>
       <ul>
-        <li>Comprar Créditos</li>
-        <li>Vendas e Renovações</li>
-        <li>Cupons de Desconto</li>
-      </ul>
-    </div>
-    <div>
-      <p class="highlight">📈 Relatórios</p>
-      <ul>
-        <li>Estatísticas dos Servidores</li>
-        <li>Novos Conteúdos</li>
-      </ul>
-    </div>
-    <div>
-      <p class="highlight">🧰 Utilitários</p>
-      <ul>
-        <li>ChatBot</li>
-        <li>Domínios</li>
-      </ul>
-    </div>
-    <div>
-      <p class="highlight">🧷 Sistema</p>
-      <ul>
-        <li>Pacotes</li>
-        <li>Pacote de Créditos</li>
-      </ul>
-    </div>
-    <div>
-      <p class="highlight">👤 Conta</p>
-      <ul>
-        <li>Perfil</li>
-        <li>Segurança</li>
-        <li>Sessões Ativas</li>
+        <li>Vendas</li>
+        <li>Renovações</li>
+        <li>Cupons</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- ===== CRÉDITOS E VALORES ===== -->
+<!-- =========================
+     CRÉDITOS
+========================= -->
 <div class="box">
   <h2>💰 Créditos & Valores</h2>
-  <table class="styled-table">
-    <tr><td>5</td><td>R$ 60,00</td></tr>
-    <tr><td>10</td><td>R$ 100,00</td></tr>
-    <tr><td>20</td><td>R$ 200,00</td></tr>
-    <tr><td>25</td><td>R$ 222,50</td></tr>
-    <tr><td>30</td><td>R$ 255,00</td></tr>
-    <tr><td>50</td><td>R$ 365,00</td></tr>
-    <tr><td>100</td><td>R$ 515,00</td></tr>
-    <tr><td>250</td><td>R$ 1.145,00</td></tr>
-    <tr><td>500</td><td>R$ 1.770,00</td></tr>
-    <tr><td>1000</td><td>R$ 2.030,00</td></tr>
-    <tr><td>2000</td><td>R$ 3.840,00</td></tr>
-    <tr><td>5000</td><td>R$ 9.050,00</td></tr>
-    <tr><td>10000</td><td>R$ 17.100,00</td></tr>
-    <tr><td>20000</td><td>R$ 32.200,00</td></tr>
-    <tr><td>100000</td><td>R$ 151.000,00</td></tr>
-  </table>
-  <p class="highlight">⚠️ Venda recomendada: R$ 30,00 por cliente</p>
+  <p>Venda recomendada: <span class="highlight">R$ 30,00 por cliente</span></p>
 </div>
 
-<!-- ===== SIMULADOR DE GANHO ===== -->
-<div class="box">
+<!-- =========================
+     SIMULADOR
+========================= -->
+<div class="box simulador">
   <h2>📈 Simulador de Ganhos</h2>
-  <p>Digite a quantidade de créditos e o valor de venda por cliente:</p>
-  <input type="number" id="creditos" placeholder="Créditos">
+
+  <input type="number" id="creditos" placeholder="Quantidade de créditos">
   <input type="number" id="valorVenda" placeholder="Valor de venda (R$)">
-  <button onclick="calcularLucro()">Calcular</button>
+
+  <br>
+
+  <button onclick="calcularLucro()">Calcular Lucro</button>
+
   <div id="resultado"></div>
 </div>
 
-<script>
-function calcularLucro() {
-  const creditos = parseInt(document.getElementById('creditos').value);
-  const valorVenda = parseFloat(document.getElementById('valorVenda').value);
-  if (!creditos || !valorVenda) {
-    document.getElementById('resultado').innerHTML = "Preencha os campos corretamente.";
-    return;
-  }
-  // custo médio por crédito (exemplo: 100 créditos = R$ 515 → custo unitário ~5,15)
-  let custoUnitario = 5.15; 
-  let custoTotal = creditos * custoUnitario;
-  let receita = creditos * valorVenda;
-  let lucro = receita - custoTotal;
-  let porcentagem = ((lucro / custoTotal) * 100).toFixed(1);
-
-  document.getElementById('resultado').innerHTML =
-    `<p>💰 Receita: R$ ${receita.toFixed(2)}</p>
-     <p>📉 Custo: R$ ${custoTotal.toFixed(2)}</p>
-     <p>🚀 Lucro: R$ ${lucro.toFixed(2)} (${porcentagem}%)</p>`;
-}
-</script>
-
-<!-- ===== PLATAFORMAS ===== -->
-<div class="box">
-  <h2>🖥️ Plataformas Compatíveis</h2>
-  <p>
-    📱 Android • iOS<br>
-    📺 TV Box • Smart TVs (LG, Samsung, Roku)<br>
-    💻 Windows • Mac • Linux<br>
-    🔌 Fire Stick • Mi Stick • Chromecast<br>
-    📲 Tablets Android • iPad
-  </p>
-</div>
-
-<!-- ===== CTA FINAL ===== -->
+<!-- =========================
+     CTA FINAL
+========================= -->
 <a href="https://atmos.panelbr.site/#/rs/ywDmBebWpR/241KrdoWmx"
    class="btn" target="_blank">
-   🚀 FAÇA AGORA SEU CADASTRO GRÁTIS!
+   🚀 FAÇA AGORA SEU CADASTRO GRATUITO
 </a>
 
+<!-- =========================
+     FOOTER
+========================= -->
 <footer>
 Equipe MaxTV Pro<br>
 Assista mais. Pague menos.
 </footer>
 
-</div>
+<!-- =========================
+     SCRIPT
+========================= -->
+<script>
+function calcularLucro() {
+  const creditos = parseInt(document.getElementById('creditos').value);
+  const valorVenda = parseFloat(document.getElementById('valorVenda').value);
+
+  if (!creditos || !valorVenda) {
+    document.getElementById('resultado').innerHTML =
+      "<p class='highlight'>Preencha todos os campos corretamente.</p>";
+    return;
+  }
+
+  let custoUnitario = 5.15;
+  let custo = creditos * custoUnitario;
+  let receita = creditos * valorVenda;
+  let lucro = receita - custo;
+  let porcentagem = ((lucro / custo) * 100).toFixed(1);
+
+  document.getElementById('resultado').innerHTML = `
+    <p>💰 Receita: R$ ${receita.toFixed(2)}</p>
+    <p>📉 Custo: R$ ${custo.toFixed(2)}</p>
+    <p class="highlight">🚀 Lucro: R$ ${lucro.toFixed(2)} (${porcentagem}%)</p>
+  `;
+}
+</script>
+
 </body>
-</html>	
+</html>
