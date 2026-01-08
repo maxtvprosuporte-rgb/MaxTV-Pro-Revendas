@@ -125,20 +125,35 @@ a {
     color: #ccc;
 }
 
-/* IMAGEM COM DEGRADÊ */
+/* =========================
+   IMAGEM TOPO – FUSÃO COM FUNDO
+========================= */
 .topo-imagem {
     margin-top: 50px;
     width: 100%;
     height: 420px;
+
     background:
+        /* degradê superior (mistura com o conteúdo) */
         linear-gradient(to bottom,
-            rgba(0,0,0,0.9) 0%,
-            rgba(0,0,0,0.2) 40%,
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0.85) 15%,
+            rgba(0,0,0,0.35) 45%,
+            rgba(0,0,0,0.6) 65%,
             rgba(0,0,0,1) 100%
         ),
+        /* leve vinheta lateral */
+        linear-gradient(to right,
+            rgba(0,0,0,0.85) 0%,
+            rgba(0,0,0,0.2) 20%,
+            rgba(0,0,0,0.2) 80%,
+            rgba(0,0,0,0.85) 100%
+        ),
         url("img/topo_maxtvpro.png");
+
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* RESPONSIVO */
@@ -286,7 +301,7 @@ footer {
 
   <!-- LOGO -->
   <div class="topo-logo">
-    <img src="img/logo_maxtvpro.png" alt="MaxTV Pro">
+     <img src="Icon/logo.png" alt="MaxTV Pro">
   </div>
 
   <!-- TEXTO PRINCIPAL -->
