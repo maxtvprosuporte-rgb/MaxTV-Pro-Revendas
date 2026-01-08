@@ -396,6 +396,43 @@ footer {
         padding: 16px 40px;
     }
 }
+
+/* =========================
+   PLATAFORMAS COMPATÍVEIS
+========================= */
+.plataformas .intro {
+    max-width: 900px;
+    margin: 0 auto 35px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.plataformas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.plataforma-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(239,68,68,0.35);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.plataforma-item h3 {
+    margin: 10px 0 6px;
+    font-size: 20px;
+    color: #facc15;
+}
+
+.plataforma-item p {
+    font-size: 16px;
+    color: #ccc;
+}
+
 </style>
 </head>
 
@@ -718,7 +755,60 @@ footer {
 
   <div id="resultado"></div>
 </div>
-   
+
+<!-- =========================
+     PLATAFORMAS
+========================= -->
+
+<div class="box plataformas">
+  <h2>🖥️ Plataformas Compatíveis</h2>
+
+  <p class="intro">
+    A <strong>MaxTV Pro</strong> é compatível com os principais dispositivos do mercado,
+    garantindo acesso completo em qualquer lugar e a qualquer momento.
+  </p>
+
+  <div class="plataformas-grid">
+
+    <div class="plataforma-item">
+      📱
+      <h3>Celulares</h3>
+      <p>Android e iOS</p>
+    </div>
+
+    <div class="plataforma-item">
+      📺
+      <h3>TV Box & Android TV</h3>
+      <p>TV Box e Smart TVs Android</p>
+    </div>
+
+    <div class="plataforma-item">
+      💻
+      <h3>Computadores</h3>
+      <p>Windows • Mac • Linux</p>
+    </div>
+
+    <div class="plataforma-item">
+      🖥️
+      <h3>Smart TVs</h3>
+      <p>LG • Samsung • Roku e similares</p>
+    </div>
+
+    <div class="plataforma-item">
+      🔌
+      <h3>Streaming</h3>
+      <p>Fire Stick • Mi Stick • Chromecast</p>
+    </div>
+
+    <div class="plataforma-item">
+      📲
+      <h3>Tablets</h3>
+      <p>Android e iPad</p>
+    </div>
+
+  </div>
+</div>
+
 <!-- =========================
      CTA FINAL
 ========================= -->
