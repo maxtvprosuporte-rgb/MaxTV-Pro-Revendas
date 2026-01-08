@@ -5,8 +5,9 @@
 <title>Programa Afiliados MaxTV Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- CSS -->
-<style>/* =========================
+<style>
+
+/* =========================
    RESET / BASE
 ========================= */
 * {
@@ -96,9 +97,15 @@ a {
 }
 
 /* LOGO */
+.topo-logo {
+    text-align: center;
+}
+
 .topo-logo img {
+    display: block;
+    margin: 0 auto 30px;
     max-width: 280px;
-    margin-bottom: 30px;
+    height: auto;
 }
 
 /* TEXTO */
@@ -297,9 +304,11 @@ footer {
 <!-- =========================
      TOPO / HERO NOVO
 ========================= -->
-<section>
+<section class="hero-topo">
+
+  <!-- LOGO -->
   <div class="topo-logo">
-    <img src="Icon/logo.png" alt="MaxTV Pro">
+    <img src="icon/logo.png" alt="MaxTV Pro" loading="eager">
   </div>
 
   <!-- TEXTO PRINCIPAL -->
