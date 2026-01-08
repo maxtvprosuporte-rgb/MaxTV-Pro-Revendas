@@ -53,59 +53,46 @@ a {
 /* =========================
    HERO / TOPO
 ========================= */
-.hero {
-    display: flex;
+/* HERO COM TEXTO SOBRE A IMAGEM */
+.hero-image {
+    position: relative;
     width: 100%;
     min-height: 540px;
-    background-color: #000;
-    overflow: hidden;
-    margin-bottom: 60px;
+    background-image:
+        linear-gradient(to right,
+            rgba(0,0,0,0.8) 0%,
+            rgba(0,0,0,0.4) 50%,
+            rgba(0,0,0,0.8) 100%
+        ),
+        url("img/topo_maxtvpro.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-/* TEXTO */
+/* TEXTO SOBRE A IMAGEM */
 .hero-text {
-    flex: 1;
-    padding: 40px 40px 40px 20px;
-    text-align: left;
+    position: relative;
     z-index: 2;
+    max-width: 800px;
+    padding: 40px 20px;
+    color: #fff;
 }
 
 .hero-text h1 {
     color: #d4af37;
-    font-size: 38px;
-    margin-bottom: 18px;
+    font-size: 42px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
 .hero-text p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
-    margin-bottom: 12px;
-}
-
-/* IMAGEM COM FUNDO PRETO ABSOLUTO */
-.hero-image {
-    flex: 1;
-    min-height: 540px;
-    background-color: #000;
-    background-image:
-        linear-gradient(to right,
-            rgba(0,0,0,1) 0%,
-            rgba(0,0,0,0.35) 20%,
-            rgba(0,0,0,0.35) 80%,
-            rgba(0,0,0,1) 100%
-        ),
-        linear-gradient(to bottom,
-            rgba(0,0,0,1) 0%,
-            rgba(0,0,0,0.25) 22%,
-            rgba(0,0,0,0.25) 78%,
-            rgba(0,0,0,1) 100%
-        ),
-        url("img/topo_maxtvpro.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    margin-bottom: 14px;
 }
 
 /* =========================
@@ -236,6 +223,33 @@ footer {
 </head>
 
 <body>
+
+<!-- HERO -->
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>Revenda MaxTV Pro</h1>
+
+    <p>
+      Transforme o entretenimento em uma verdadeira fonte de renda.<br>
+      Venda planos a partir de <span class="highlight">R$ 30,00</span> e tenha
+      <span class="highlight">lucro recorrente acima de 100%</span>.
+    </p>
+
+    <p>
+      Muitos já conquistaram sua liberdade financeira,
+      <span class="highlight">conquiste a sua hoje!</span>
+    </p>
+
+    <p>
+      Painel completo • Automação • Suporte 24h • Créditos sem expiração
+    </p>
+
+    <a href="https://atmos.panelbr.site/#/rs/ywDmBebWpR/241KrdoWmx"
+       class="btn" target="_blank">
+       🚀 FAÇA AGORA SEU CADASTRO GRÁTIS!
+    </a>
+  </div>
+</div>
 
 <!-- ===== COMO FUNCIONA ===== -->
 <div class="box">
