@@ -88,6 +88,71 @@ a {
 }
 
 /* =========================
+   TOPO NOVO
+========================= */
+.hero-topo {
+    background: #000;
+    padding: 60px 20px 0;
+}
+
+/* LOGO */
+.topo-logo img {
+    max-width: 280px;
+    margin-bottom: 30px;
+}
+
+/* TEXTO */
+.topo-texto {
+    max-width: 900px;
+    margin: auto;
+}
+
+.topo-texto h1 {
+    font-size: 44px;
+    color: #d4af37;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.topo-texto p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.topo-texto .sub {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* IMAGEM COM DEGRADÊ */
+.topo-imagem {
+    margin-top: 50px;
+    width: 100%;
+    height: 420px;
+    background:
+        linear-gradient(to bottom,
+            rgba(0,0,0,0.9) 0%,
+            rgba(0,0,0,0.2) 40%,
+            rgba(0,0,0,1) 100%
+        ),
+        url("img/topo_maxtvpro.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .topo-texto h1 {
+        font-size: 32px;
+    }
+
+    .topo-imagem {
+        height: 260px;
+    }
+}
+
+/* =========================
    DESTAQUE
 ========================= */
 .highlight {
@@ -215,14 +280,17 @@ footer {
 <body>
 
 <!-- =========================
-     HERO
+     TOPO / HERO NOVO
 ========================= -->
-<section class="hero">
-  <div class="hero-content">
+<section class="hero-topo">
 
-    <!-- LOGO -->
+  <!-- LOGO -->
+  <div class="topo-logo">
     <img src="img/logo_maxtvpro.png" alt="MaxTV Pro">
+  </div>
 
+  <!-- TEXTO PRINCIPAL -->
+  <div class="topo-texto">
     <h1>Revenda MaxTV Pro</h1>
 
     <p>
@@ -231,16 +299,19 @@ footer {
       <span class="highlight">lucro recorrente acima de 100%</span>.
     </p>
 
-    <p>
+    <p class="sub">
       Painel completo • Automação • Suporte 24h • Créditos sem expiração
     </p>
 
     <a href="https://atmos.panelbr.site/#/rs/ywDmBebWpR/241KrdoWmx"
        class="btn" target="_blank">
-       🚀 FAÇA AGORA SEU CADASTRO GRATUITO
+       🚀 FAÇA SEU CADASTRO GRATUITO
     </a>
-
   </div>
+
+  <!-- IMAGEM -->
+  <div class="topo-imagem"></div>
+
 </section>
 
 <!-- =========================
